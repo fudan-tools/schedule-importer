@@ -7,8 +7,9 @@
   pip3 install requests
 ```
 3. 打开 `userInfo.json`，修改里面的学号与密码。
-4. 运行 `main.py` 脚本
+4. 切换至工作目录并运行 `main.py` 脚本
 ```bash
+  cd get_schedule
   python3 main.py
 ```
 5. 运行成功后，会在当前目录生成 `schedule.ics` 文件，可将该 ics 文件导入日历软件查看自己的课表。

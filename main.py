@@ -79,8 +79,9 @@ weekInfo = weeks_json("2025-09-07","2026-01-10")
 if(start_on_sunday):
     for i in weekInfo:
         weekInfo[i] = weekInfo[i][1:]+weekInfo[i][:1];
+params['semesterId'] = sid;
 response = requests.get(
-    'https://fdjwgl.fudan.edu.cn/student/for-std/course-table/semester/504/print-data',
+    'https://fdjwgl.fudan.edu.cn/student/for-std/course-table/semester/%s/print-data'%sid,
     params=params,
     cookies=cookies,
 )
