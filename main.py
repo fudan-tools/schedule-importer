@@ -74,8 +74,11 @@ data = json.loads(m)
 sid = data[0]['id'];
 start = data[0]['startDate'];
 end = data[0]['endDate'];
-start_on_sunday = data[0]['weekStartOnSunday'];
-weekInfo = weeks_json("2025-09-07","2026-01-10")
+try:
+    start_on_sunday = data[0]['weekStartOnSunday'];
+except:
+    start_on_sunday = True;
+weekInfo = weeks_json(data[0]["startDate"],data[0]["endDate"])
 if(start_on_sunday):
     for i in weekInfo:
         weekInfo[i] = weekInfo[i][1:]+weekInfo[i][:1];
